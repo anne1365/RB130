@@ -1,0 +1,1 @@
+p ['a', 'b', 'c'].map { |letter| letter.next }
