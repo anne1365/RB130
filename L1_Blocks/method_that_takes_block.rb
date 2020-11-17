@@ -18,3 +18,6 @@ yielding { puts "Inside the block - we've yielded!"}
 # => Inside the yielding method!
 
 yielding("hello") { puts "Inside the block - we've yielded!"} # => ArgumentError
+yielding # => LocalJumpError (no block given)
+
+
