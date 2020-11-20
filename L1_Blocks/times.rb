@@ -1,10 +1,10 @@
 # Integer#times
 
-def times(integer, &block)
+def times(integer)
   counter = 0
   
   until counter == integer
-    block.call(counter)
+    yield(counter) if block_given?
     counter += 1
   end
   
@@ -13,13 +13,14 @@ end
 
 
 def times(integer)
-  0.upto(integer-1) { |n| yield(n) }
+  0.upto(integer-1) { |n| yield(n) if block_given? }
   integer
 end
 
-puts times(5) { |n| puts n }
+puts times(5)# { |n| puts n }
 
 =begin
+Order of implementation by line number:
 20
 15
 16

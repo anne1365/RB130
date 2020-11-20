@@ -1,11 +1,16 @@
 def each(arr)
   counter = 0
   
-  until counter >= arr.length if block_given?
-    yield(arr[counter])
+  until counter >= arr.length
+    yield(arr[counter]) if block_given?
     counter += 1
   end
   
+  arr
+end
+
+def each(arr)
+  0.upto(arr.size - 1) {|idx| yield(arr[idx]) if block_given? }
   arr
 end
 
