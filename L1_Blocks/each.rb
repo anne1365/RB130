@@ -10,7 +10,7 @@ def each(arr)
 end
 
 def each(arr)
-  0.upto(arr.size - 1) {|idx| yield(arr[idx]) if block_given? }
+  0.upto(arr.size - 1) { |idx| yield(arr[idx]) if block_given? }
   arr
 end
 

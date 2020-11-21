@@ -12,12 +12,12 @@ def times(integer)
 end
 
 
-def times(integer)
-  0.upto(integer-1) { |n| yield(n) if block_given? }
-  integer
-end
+# def times(integer)
+#   0.upto(integer-1) { |n| yield(n) if block_given? }
+#   integer
+# end
 
-puts times(5)# { |n| puts n }
+times(5) { |n| puts n }
 
 =begin
 Order of implementation by line number:

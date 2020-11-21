@@ -1,9 +1,1 @@
-# THIS WORKS
-# def say(words)
-#   yield if block_given?
-#   puts "> " + words
-# end
-
-# say("hi there") do
-#   system 'cls'
-# end
+ept Timothy had a few too many churros and was really bloated on the way home.") }
