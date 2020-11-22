@@ -8,8 +8,7 @@ class TodoList #----------------------------------------------------------------
 
   # ---- Adding to the list ----------------------------------------------
   def add(todo)
-    # raise type error as specified
-
+    raise TypeError, 'can only add Todo objects' unless todo.instance_of? Todo
     todos << todo
     system 'cls'
     puts "To Do List:"
@@ -43,23 +42,21 @@ class TodoList #----------------------------------------------------------------
 
   # ---- Retrieving an item in the list ----------------------------------
   def invalid_index?(index)
-    todos[index] == nil
-    # need IndexError & ArgumentError
-
+    todos[index].nil?
   end
   
   def item_at(index)
-    # need IndexError & ArgumentError
+    raise IndexError.new("That index is out of range!") if invalid_index?(index)
     puts todos[index]
   end
 
   def mark_done_at(index)
-    # need IndexError & ArgumentError
+    raise IndexError.new("That index is out of range!") if invalid_index?(index)
     todos[index].done!
   end
 
   def mark_undone_at(index)
-    # need IndexError & ArgumentError
+    raise IndexError.new("That index is out of range!") if invalid_index?(index)
     todos[index].undone!
   end
 
@@ -77,7 +74,7 @@ class TodoList #----------------------------------------------------------------
   end
 
   def remove_at(index)
-    # need IndexError & ArgumentError
+    raise IndexError.new("That index is out of range!") if invalid_index?(index)
     todos.delete_at(index)
   end
 
@@ -159,6 +156,6 @@ list.to_s
 list.mark_undone_at(1)
 list.to_s
 
-puts
+# puts
 
-list.item_at(1)
+list.item_at(100)
