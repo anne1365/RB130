@@ -1,1 +1,3 @@
-ept Timothy had a few too many churros and was really bloated on the way home.") }
+puts list.all_done
+# puts list.all_not_done.equal?(list)
+# puts list.inspect
