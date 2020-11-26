@@ -4,7 +4,7 @@ Minitest::Reporters.use!
 
 require_relative 'car'
 
-# ASSERT-STYLE SYNTAX
+# # ASSERT-STYLE SYNTAX
 # class CarTest < MiniTest::Test
 #   def test_wheels
 #     car = Car.new
