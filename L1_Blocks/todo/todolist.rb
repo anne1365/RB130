@@ -65,14 +65,11 @@ class TodoList #----------------------------------------------------------------
     todos.all? { |todo| todo.done? }
   end
 
-  def add(todo)
+  def <<(todo)
     raise TypeError, 'can only add Todo objects' unless todo.instance_of? Todo
     todos << todo
   end
-
-  def <<(todo)
-    add(todo)
-  end
+  alias_method :add, :<<
 
   def item_at(index)
     todos.fetch(index)
