@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require "minitest/reporters"
 Minitest::Reporters.use!
 
-require_relative 'assertions'
+require_relative '../assertions'
 
 class AssertionsTest < MiniTest::Test
   def test_paws

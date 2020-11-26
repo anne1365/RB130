@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require "minitest/reporters"
 Minitest::Reporters.use!
 
-require_relative 'car'
+require_relative '../car'
 
 # # ASSERT-STYLE SYNTAX
 # class CarTest < MiniTest::Test
