@@ -1,46 +1,54 @@
+system 'cls'
+
 require 'minitest/autorun'
 require "minitest/reporters"
 Minitest::Reporters.use!
 
 require_relative '../assertions'
 
+# Minitest::Test.i_suck_and_my_tests_are_order_dependent!
+
 class AssertionsTest < MiniTest::Test
-  def test_paws
-    cat = Cat.new
-    assert_equal(4, cat.paws)
+  def setup
+    @cat = Cat.new
+    @catto = Cat.new
   end
 
-  def test_paws
-    cat = Cat.new
-    assert_equal(4, cat.paws)
-  end
-  
   def test_cat_exists
+    assert(@cat)
+  end
+
+  def test_includes_cat
+    arr = [1, 2, 3]
+    arr << @cat
+  
+    assert_includes(arr, @cat)
+  end
+
+  def test_instance_of_cat
     cat = Cat.new
-    assert(cat)
+    assert_instance_of(Cat, @cat)
   end
 
   def test_name_is_nil
-	  cat = Cat.new
-	  assert_nil(cat.name)
+	  assert_nil(@cat.name)
+  end
+
+  def test_paws
+    assert_equal(4, @cat.paws)
   end
 
   def test_raise_initialize_with_arg
     assert_raises(ArgumentError) do
       cat = Cat.new(name: "Sherlock")
     end
-  end
+  end  
 
-  def test_instance_of_cat
-    cat = Cat.new
-    assert_instance_of(Cat, cat)
+  def test_paws_equal_4
+    assert(@cat.paws == 4, "Objects of the cat class don't have 3 paws.")
   end
-
-  def test_includes_cat
-    cat = Cat.new
-    arr = [1, 2, 3]
-    arr << cat
   
-    assert_includes(arr, cat)
+  def test_two_cats_same
+    assert_equal(@cat, @catto)
   end
 end 

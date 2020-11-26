@@ -145,14 +145,14 @@ class TodoList #----------------------------------------------------------------
 end
 
 #--------------------------------------------------------------------------------------------
-todo1 = Todo.new("Buy deli meat")
-todo2 = Todo.new("Clean bathroom")
-todo3 = Todo.new("Order body wash")
+# todo1 = Todo.new("Buy deli meat")
+# todo2 = Todo.new("Clean bathroom")
+# todo3 = Todo.new("Order body wash")
 
-list = TodoList.new("Things to get done!")
-list.add(todo1)                 # adds todo1 to end of list, returns list
-list.add(todo2)                 # adds todo2 to end of list, returns list
-list.add(todo3)                 # adds todo3 to end of list, returns list
+# list = TodoList.new("Things to get done!")
+# list.add(todo1)                 # adds todo1 to end of list, returns list
+# list.add(todo2)                 # adds todo2 to end of list, returns list
+# list.add(todo3)                 # adds todo3 to end of list, returns list
 
 # puts list
 # list.pop
@@ -166,7 +166,7 @@ list.add(todo3)                 # adds todo3 to end of list, returns list
 # puts each_result.inspect
 # puts list.inspect
 
-todo2.done!
+# todo2.done!
 
 # results = list.select { |todo| todo.done? }
 
@@ -178,8 +178,8 @@ todo2.done!
 # puts list.all_not_done.equal?(list)
 # puts list.inspect
 
-puts list
-puts
-list.find_by_title("Buy deli meat")
-list.mark_done("Buy deli meat")
-puts list
+# puts list
+# puts
+# list.find_by_title("Buy deli meat")
+# list.mark_done("Buy deli meat")
+# puts list

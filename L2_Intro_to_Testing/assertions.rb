@@ -4,4 +4,8 @@ class Cat
   def initialize
     @paws = 4
   end
+
+  def ==(other)
+    paws == other.paws
+  end
 end
