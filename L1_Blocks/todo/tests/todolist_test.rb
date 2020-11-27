@@ -1,8 +1,10 @@
 system 'cls'
 
+require 'simplecov'
 require 'minitest/autorun'
 require 'minitest/reporters'
 Minitest::Reporters.use!
+SimpleCov.start
 
 require_relative '../todolist'
 
@@ -49,7 +51,7 @@ class TodoTest < Minitest::Test
     assert_equal(false, @list.done?)
   end
 
-  def test_raise_type_error
+  def test_add_raise_error
     assert_raises(TypeError) { @list << "Buy lettuce" }
     assert_raises(TypeError) { @list << 312 }
     assert_raises(TypeError) { @list << [1, 2, 3, 4] }
@@ -64,12 +66,12 @@ class TodoTest < Minitest::Test
     assert_equal(@todos, @list.to_a)
   end
 
-  def test_add
+  def test_add_alias
     todo4 = Todo.new("Floss cat's teeth")
     @list.add todo4
-    @todos << todo4
+    todos = @todos << todo4
 
-    assert_equal(@todos, @list.to_a)
+    assert_equal(todos, @list.to_a)
   end
 
   def test_item_at
@@ -172,6 +174,39 @@ class TodoTest < Minitest::Test
   def test_select_returns_new_list
     selection = @list.select { |todo| todo }
     refute_equal(@list, selection)
+  end
+  
+  def test_find_by_title
+    title = "Clean room"
+    search_result = @list.select { |todo| todo.title == title }.first
+    assert_equal(search_result, @list.find_by_title(title))
+  end
+
+  def test_all_done_select
+    @list.mark_done_at(1)
+    assert_equal(@todo2, @list.all_done.first)
+  end
+
+  def test_all_not_done_select
+    @list.mark_done_at(0)
+    @list.mark_done_at(2)
+    assert_equal(@todo2, @list.all_not_done.first)
+  end
+
+  def test_mark_done
+    title = "Clean room"
+    @list.mark_done(title)
+    assert_equal(true, @todo2.done?)
+  end
+
+  def test_mark_all_done
+    completed_list = @list.clone.done!
+    assert_equal(completed_list, @list.mark_all_done.to_a)
+  end
+
+  def test_mark_all_undone
+    completed_list = @list.clone.undone!
+    assert_equal(completed_list, @list.mark_all_undone.to_a)
   end
 end
 
