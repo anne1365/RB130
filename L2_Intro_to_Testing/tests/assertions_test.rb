@@ -6,7 +6,6 @@ Minitest::Reporters.use!
 
 require_relative '../assertions'
 
-# Minitest::Test.i_suck_and_my_tests_are_order_dependent!
 
 class AssertionsTest < MiniTest::Test
   def setup
