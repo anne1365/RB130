@@ -44,4 +44,3 @@ class SumOfMultiples
 
   attr_reader :numbers
 end
-
