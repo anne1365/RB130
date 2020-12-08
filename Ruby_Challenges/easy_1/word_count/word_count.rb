@@ -58,7 +58,7 @@ class Phrase
   attr_reader :phrase
 
   def clean_phrase
-    str = string.scan(/(?<Token>[\w\d](?:[^,\s]*[\w\d])?)/).flatten.compact
+    phrase.downcase.scan(/(?:[\w\d](?:[^,\s]*[\w\d])?)/).flatten.compact
   end
 end
 
@@ -77,9 +77,9 @@ end
 # # p "one two three".split(/[^a-z0-9]/)
 # # p "cat".scan(/[c[^ac]]/)
 # # p "cat".scan(/[t]&[^ca]/)
-# # p string.downcase.scan(/(\s[\d\w]\s)|([\w\d]+[']?[\w\d]+)/).flatten.compact.map{|el| el.scan(/[^\n]/).join}
+# # # p string.downcase.scan(/(\s[\d\w]\s)|([\w\d]+[']?[\w\d]+)/).flatten.compact.map{|el| el.scan(/[^\n]/).join}
 
 
-# string = "This, 1, my friend,isn't\na 'stringy' string!"
-# p result = string.scan(/(?<Token>[\w\d](?:[^,\s]*[\w\d])?)/)
+# string = "Louis' 'book'!"
+# p result = string.scan(/(?:[\w\d](?:[^,\s]*[\w\d])?)/)
 # p result.flatten.compact
