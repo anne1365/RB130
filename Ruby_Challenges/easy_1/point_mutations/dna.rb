@@ -27,6 +27,13 @@ class DNA
   end
 
   def hamming_distance(other)
+    mutations = 0
 
+    strand.chars.each_with_index do |base, idx|
+      break if base == nil || other.chars[idx] == nil
+      mutations += 1 if base != other.chars[idx]
+    end
+
+    mutations
   end
 end
