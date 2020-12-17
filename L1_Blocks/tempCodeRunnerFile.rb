@@ -1,5 +1,16 @@
-p [2, 3, 5].inject(1) { |total, num| num + num }
+def all_strings?(arr)
+  arr.all? { |el| el.to_s.to_i != el }
+end
 
-# p [2, 3, 5].inject { |total, num| total + num }
+def all_integers?(arr)
+  arr.all? { |el| el.to_s.to_i == el }
+end
 
-# p [2, 3, 5].inject { |total, num| num + num }
+def reduce(arr, acc = 0)
+  arr = arr.flatten
+  return arr if !all_integers?(arr) && !all_strings?(arr)
+
+  acc = '' if all_strings?(arr)
+  arr.each { |num| acc = yield(acc, num) } if block_given?
+  acc
+end
