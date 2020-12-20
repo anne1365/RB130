@@ -12,7 +12,7 @@ terminated by a single point. Odd words are copied in
 reverse order while even words are merely echoed. For
 example, the input string:
 
-"whats the matter with kansas" becomes 
+"whats the matter with kansas" becomes
 "whats eht matter htiw kansas."
 
 BONUS POINTS: each character must be read and printed one at
@@ -20,13 +20,12 @@ a time.
 
 ------------------------------------------------------------
 PROBLEM: given a string containing letters, spaces, and a
-point, return a copy of the string with 
+point, return a copy of the string with
 
   INPUT:  string (containing letters, spaces, and a point)
   OUTPUT: string with words separated by one space,
           terminated by a point
-
-  QUESTIONS: 
+  QUESTIONS:
   - What's the best way to iterate through each letter in
     the string only once?
   - How do we determine when a word starts and ends?
@@ -78,8 +77,6 @@ ALGO:
 
   - if next char is a period or next char is nil, append
     period to string and break
-  
-
 
    --- OR ---
 
@@ -87,7 +84,7 @@ ALGO:
   initialize word_num counter to 0
 
   iterate through each char in string arg with index
-   
+
     if current char is a period or next char is nil
       push period to result
       break (if necessary)
@@ -138,9 +135,6 @@ class OddWords
     end
 end
 
-
-
 p OddWords.parse("what's the matter with kansas")
 p OddWords.parse("my cat's name is sherlock")
 p OddWords.parse("hello        friends")
-
