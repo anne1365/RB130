@@ -3,26 +3,17 @@ Working through concepts and exercises presented within Launch School's RB130 co
 
 =begin
 PROBLEM:
-
-UNDERSTANDING THE PROBLEM:
-  INPUTS  -->
-  
-  OUTPUTS -->
+  INPUTS:
+  OUTPUTS:
   
   QUESTIONS:
   
   RULES:
 
-    EXPLICIT:
-
-    IMPLICIT:
-
-  IDEAS:
-
-EXAMPLES / TEST CASES:
+TEST CASES:
 
 DATA STRUCTURE:
 
-ALGORITHM / PSEUDOCODE:
+ALGORITHM:
 
 =end
