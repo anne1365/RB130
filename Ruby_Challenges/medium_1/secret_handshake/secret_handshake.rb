@@ -41,8 +41,8 @@ class SecretHandshake
   
   def commands
     commands = []
-    handshake = decimal_to_binary_string(@num).chars.reverse
-    to_reverse = (handshake.pop == '1' ? true : false)
+    handshake = decimal_to_binary(@num).chars.reverse
+    reverse = handshake.pop == '1' ? true : false
     
     handshake.each_with_index do |el, i|
       commands << COMMANDS[i] if el == '1'
@@ -53,7 +53,7 @@ class SecretHandshake
 
   private
 
-  def decimal_to_binary_string(num)
+  def decimal_to_binary(num)
     binary = ''
     num = @num.to_i
 

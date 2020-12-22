@@ -1,5 +1,0 @@
-p decimal_to_binary(8)
-p decimal_to_binary(4)
-p decimal_to_binary(16)
-p decimal_to_binary(3)
-p decimal_to_binary(9)
