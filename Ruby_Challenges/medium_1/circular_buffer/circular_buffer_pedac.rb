@@ -1,0 +1,16 @@
+=begin
+PROBLEM:
+  INPUTS:
+  OUTPUTS:
+  
+  QUESTIONS:
+  
+  RULES:
+
+TEST CASES:
+
+DATA STRUCTURE:
+
+ALGORITHM:
+
+=end
